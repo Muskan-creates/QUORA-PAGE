@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>QUORA</title>
+        <link rel="stylesheet" href="layout.css">
+    </head>
+    <body>
+
+        <h1>QUORA</h1>
+        <h3>Write your thoughts, we are here to read</h3>
+
+        <% for (let post of posts) { %>
+          <div class="post">
+            <h2 class="user"><%= post.username %></h2>
+            <h2 class="content"><%= post.content %></h2>
+          </br>
+          <a class="a" href="http://localhost:8080/show/<%=post.id%>">See post in detail</a>
+          <br>
+          <br>
+          <a class="a" href="http://localhost:8080/show/<%=post.id%>/edit">Edit</a>
+        </br></br>
+          <form method="post" action="http://localhost:8080/show/<%=post.id%>?_method=DELETE">
+            <button class="btn" onclick="return confirm(`Are you Sure?`)">delete post</button>
+          </form>
+          </div>
+        <% } %>
+
+        </br></br>
+
+        <div class="link">
+            <a class="a" href="http://localhost:8080/newpost">Create new post</a>
+        </div>
+    </body>
+</html>

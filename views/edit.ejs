@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="/layout.css">
+    </head>
+    <body>
+        <h1>EDIT YOUR POST</h1>
+        <p>post id:<%=post.id%></p>
+        <p>post username:<%=post.username%></p>
+        <div class="form">
+        <form method="post" action="/show/<%=post.id%>?_method=PATCH">
+            <textarea rows="20" cols="80" name="content"><%=post.content%></textarea></br></br>
+            <button>submit</button>
+        </form>
+        </div>
+    </body>
+</html>
